@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotações</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .cotacoes {
+            display: block;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cotacao {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .cotacao strong {
+            color: #4CAF50;
+        }
+
+        .cotacao span {
+            display: block;
+            margin-top: 0.5rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cotações de Moedas</h1>
+    </header>
+    <main>
+        <div class="cotacoes">
+            {% for moeda, dados in cotacoes.items %}
+                <div class="cotacao">
+                    <strong>{{ moeda }}:</strong>
+                    <span>{{ dados.name }}</span>
+                    <span>Compra: {{ dados.bid }}</span>
+                    <span>Venda: {{ dados.ask }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

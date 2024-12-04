@@ -1,0 +1,4 @@
+DEBUG=False
+SECRET_KEY= defina sua chave secreta
+DATABASE_URL=postgres://dolar:dolar@localhost:5432/postgres
+ALLOWED_HOSTS=localhost, 127.0.0.1
